@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Your Library - Musify</title>
+      <link rel="stylesheet" href="styles.css" />
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+         <div class="sidebar-header">
+            <div class="logo">
+               <i class="fas fa-music"></i>
+               <span>Musify</span>
+            </div>
+         </div>
+
+         <nav class="sidebar-nav">
+            <ul>
+               <li>
+                  <a href="index.html" class="nav-link"
+                     ><i class="fas fa-home"></i> Home</a
+                  >
+               </li>
+               <li>
+                  <a href="browse.html" class="nav-link"
+                     ><i class="fas fa-search"></i> Browse</a
+                  >
+               </li>
+               <li>
+                  <a href="library.html" class="nav-link active"
+                     ><i class="fas fa-book"></i> Your Library</a
+                  >
+               </li>
+            </ul>
+         </nav>
+
+         <div class="library-section">
+            <h3>Your Library</h3>
+            <ul class="library-items">
+               <li class="active"><i class="fas fa-heart"></i> Liked Songs</li>
+               <li><i class="fas fa-download"></i> Downloads</li>
+               <li><i class="fas fa-clock"></i> Recently Played</li>
+               <li><i class="fas fa-plus"></i> Create Playlist</li>
+            </ul>
+         </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+         <!-- Library Header -->
+         <section class="library-header-section">
+            <div class="library-hero">
+               <div class="library-image">
+                  <i class="fas fa-heart"></i>
+               </div>
+               <div class="library-info">
+                  <span class="playlist-type">PLAYLIST</span>
+                  <h1>Liked Songs</h1>
+                  <p id="library-stats">0 songs</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Library Controls -->
+         <section class="library-controls">
+            <button id="play-liked-btn" class="play-all-btn">
+               <i class="fas fa-play"></i>
+            </button>
+            <button class="shuffle-btn">
+               <i class="fas fa-random"></i>
+            </button>
+            <button class="more-btn">
+               <i class="fas fa-ellipsis-h"></i>
+            </button>
+         </section>
+
+         <!-- Library Songs List -->
+         <section class="library-songs">
+            <div class="songs-header">
+               <div class="song-number">#</div>
+               <div class="song-title">TITLE</div>
+               <div class="song-artist">ARTIST</div>
+               <div class="song-album">ALBUM</div>
+               <div class="song-duration"><i class="fas fa-clock"></i></div>
+            </div>
+
+            <div class="songs-list" id="library-songs-list">
+               <!-- Library songs will be populated by JavaScript -->
+            </div>
+         </section>
+
+         <!-- Empty State -->
+         <div class="empty-library" id="empty-library">
+            <i class="fas fa-heart"></i>
+            <h2>Songs you like will appear here</h2>
+            <p>Save songs by tapping the heart icon.</p>
+            <a href="browse.html" class="find-songs-btn"
+               >Find something to like</a
+            >
+         </div>
+      </main>
+
+      <!-- Music Player -->
+      <div class="music-player">
+         <div class="player-left">
+            <img
+               src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&h=100&fit=crop"
+               alt="Current Track"
+               id="current-track-image"
+            />
+            <div class="track-info">
+               <h4 id="current-track-title">Blinding Lights</h4>
+               <p id="current-track-artist">The Weeknd</p>
+            </div>
+            <button class="heart-btn"><i class="fas fa-heart"></i></button>
+         </div>
+
+         <div class="player-center">
+            <div class="controls">
+               <button class="control-btn">
+                  <i class="fas fa-random"></i>
+               </button>
+               <button class="control-btn">
+                  <i class="fas fa-step-backward"></i>
+               </button>
+               <button class="play-btn"><i class="fas fa-play"></i></button>
+               <button class="control-btn">
+                  <i class="fas fa-step-forward"></i>
+               </button>
+               <button class="control-btn"><i class="fas fa-redo"></i></button>
+            </div>
+            <div class="progress-bar">
+               <span class="time">0:00</span>
+               <div class="progress">
+                  <div class="progress-fill"></div>
+               </div>
+               <span class="time">3:42</span>
+            </div>
+         </div>
+
+         <div class="player-right">
+            <button class="control-btn"><i class="fas fa-list"></i></button>
+            <button class="control-btn"><i class="fas fa-desktop"></i></button>
+            <div class="volume-control">
+               <button class="control-btn">
+                  <i class="fas fa-volume-up"></i>
+               </button>
+               <div class="volume-bar">
+                  <div class="volume-fill" style="width: 70%"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script src="script.js"></script>
+   </body>
+</html>
